@@ -1,53 +1,5 @@
 [
   {
-    "id": 1,
-    "type": "单选",
-    "question": "A.match",
-    "options": [
-      "balance",
-      "danger",
-      "international"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": 2,
-    "type": "单选",
-    "question": "A.heavy",
-    "options": [
-      "breathe",
-      "season",
-      "cheap"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": 3,
-    "type": "单选",
-    "question": "A.pride",
-    "options": [
-      "surprise",
-      "flight",
-      "bridge"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": 4,
-    "type": "单选",
-    "question": "A.lamb",
-    "options": [
-      "club",
-      "climb",
-      "debt"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
     "id": 5,
     "type": "单选",
     "question": "A.explained II. Situational Dialogue (10 points) Directions:Inthissection thereisalongdialoguewith5missingsentences.Attheendofthedialogue,thereis alistof givenchoices.You arerequired toselect theONE thatbestfitsinto thedialogue.Thenmark thecorrespondingletteronthe AnswerSheetwithasinglelinethroughthecentre.Notethattherearetwoadditionalchoicesandyoucannotuseanyof thechoicesinthelistmorethanonce. Li Hua: Hi,Wang Jun.What are you doing? Wang Jun:6 Li Hua: You always sit inside playing games and going online. When was the last time you had a day without going online? Wang Jun: I don't know.Probably six months ago. Li Hua:You shouldgo out more.I'mmeeting somefriendsforcoffeenow.Why don'tyou come？ Wang Jun: Thanks, but I'm fine here. Li Hua: OK.7 Wang Jun: Um. I went to Liu Ming's birthday party four weeks ago. PROVINCE Li Hua:And you haven't been out since then? WangJun:No.I don't really enjoyit.Iget nervous. Li Hua:  8 We're going for dinner. How about joining us? WangJun:That'smyworstnightmare!Ifeel nervoussittingina smallgroupmakingconversations. Li Hua:You could do somethingwhereyou don't haveto talk toomuch.Youare agoodfootball player.9 WangJun:Actually,thatsoundslikeagoodidea. Li Hua:OK,I'll pickup some informationforyou.Also,weregoing tosee the newmovieNezha II onSunday. Wang Jun:_10_ I doneed toget out more!Thankyou. Li Hua:Welcome. E.I'mgoing outwith somepeoplefromour course onSaturday. 佳鑫诺成人教育事业部|佳鑫诺专升本 POYONNND 助所有学子实脂升本梦想 用心服务超越期待 F.Which onedoyoulikebetter? G.I'mjust playinganonlinegame IIl.ReadingComprehension(50points) Section A (30 points) Directions:Thereare2passagesinthispari.Eachpassageisfollowedbysomequestions orunfinishedstatements.For eachofthemthereare4choicesmarkedA,B,CandD.YouarerequiredtochoosetheONEthatbestfitsintothestatement. MarkthecorrespondingletterontheAnswerSheetwithasinglelinethroughthecenter: Passage 1 Questions11-15arebased onthefollowingpassage. DiamondisthehardestmaterialonEarth.Yet,gemcuttersshapethem.If diamondsaresohard,howdotheycut them intoshape?Theyuseotherdiamondsofcourse! Notalldiamonds are thesame.Someareharder thanothers.Thehardnessofa diamonddependsontwo things:its purity and its structure.Let‘s discuss purityfirst. Diamondscomeinmanycolors:grey,white,yellow,blue,pink,purple,orangeandblack Reddiamonds aretherarestofall.Thismakes themworth a lotof money.Yet,pure diamonds are colorless.They are all carbon.Theyare transparent likeglass. Colorsfoundindiamondscomefromimpurities.Theyhave anotherelementbesidescarbon.Theyhavea carbon theircrystalstructure.Theboronisblue Thepurityorcolorofadiamondisimportant toitshardness.Purediamondsareharderthanimpurediamonds.But purityisn't the only thing thatmatters.Structure alsoaffects hardness. The carbon atoms in a diamond are arranged in a crystal structure. Some crystal structures are perfect.A diamond with aperfectcrystalstructureisharderthanonewithflaws.Sopure,colorlesscrystaldiamondsarethehardestofall. Goodgemstonesshouldbehard.Thisiswhatmakesdiamondssogreatforjewelry.Somegems,suchas azurite,are softandeasytoscratch.Azuritelooksprety,but it willscratchifworndaily.Diamondsdonotscratcheasily.Onlya diamondcanscratchanotherdiamond That'swhyyoucanwearadiamondringwhiledoingchores,ifyouwant.Thegemwillnotneedpolishing.Justdon’t gofistbumpingotherpeoplewithfancyengagementrings.Itwillendbadly. STANDARDSETTERINLHERELPROVINCE",
@@ -58,9 +10,10 @@
       "Whenwasthelasttimeyouwentoutwithfriends?",
       "That'swhyI doit online.",
       "I'd like to see that.",
-      "Whydon't youjoin thecollegeclub?"
+      "Whydon't youjoin thecollegeclub?",
+      "YouarerequiredtochoosetheONEthatbestfitsintothestatement."
     ],
-    "answer": "",
+    "answer": "A",
     "explanation": ""
   },
   {
@@ -192,19 +145,8 @@
       "thoughtful",
       "aware",
       "able",
-      "respected"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": 16,
-    "type": "单选",
-    "question": "A.think",
-    "options": [
-      "thinking",
-      "thinks",
-      "thought"
+      "respected",
+      "You"
     ],
     "answer": "",
     "explanation": ""
@@ -217,30 +159,6 @@
       "retires",
       "acquires",
       "admires"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": 22,
-    "type": "单选",
-    "question": "A.choice",
-    "options": [
-      "advice",
-      "benefit",
-      "role"
-    ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": 23,
-    "type": "单选",
-    "question": "A.value",
-    "options": [
-      "valued",
-      "valuing",
-      "valuable"
     ],
     "answer": "",
     "explanation": ""

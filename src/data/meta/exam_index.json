@@ -40,7 +40,7 @@
       "subjectKey": "politics",
       "setName": "2024 政治真题（已解析）",
       "file": "politics_2024.json",
-      "questionCount": 31,
+      "questionCount": 35,
       "chapterTags": [
         "马克思主义哲学",
         "毛泽东思想",
@@ -60,7 +60,7 @@
       "subjectKey": "english",
       "setName": "2024 英语真题（已解析）",
       "file": "english_2024.json",
-      "questionCount": 14,
+      "questionCount": 25,
       "chapterTags": [
         "语音",
         "情景对话",
@@ -257,7 +257,7 @@
       "subjectKey": "politics",
       "setName": "2025 政治真题",
       "file": "politics_2025.json",
-      "questionCount": 27,
+      "questionCount": 34,
       "chapterTags": [
         "马克思主义哲学",
         "毛泽东思想"
@@ -276,7 +276,7 @@
       "subjectKey": "english",
       "setName": "2025 英语真题",
       "file": "english_2025.json",
-      "questionCount": 21,
+      "questionCount": 14,
       "chapterTags": [
         "语音",
         "情景对话",
@@ -312,7 +312,23 @@
       "subjectKey": "politics",
       "setName": "2026 政治真题",
       "file": "politics_2026.json",
-      "questionCount": 32,
+      "questionCount": 31,
+      "chapterTags": [],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "english-2023",
+      "year": 2023,
+      "years": [
+        2023
+      ],
+      "subject": "英语",
+      "subjectKey": "english",
+      "setName": "2023 英语真题",
+      "file": "english_2023",
+      "questionCount": 0,
       "chapterTags": [],
       "status": "ready",
       "sourceFile": null,
