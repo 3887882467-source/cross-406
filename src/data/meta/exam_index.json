@@ -246,6 +246,45 @@
       "status": "ready",
       "sourceFile": null,
       "format": "json"
+    },
+    {
+      "id": "politics-2025",
+      "year": 2025,
+      "years": [
+        2025
+      ],
+      "subject": "政治",
+      "subjectKey": "politics",
+      "setName": "2025 政治真题",
+      "file": "politics_2025.json",
+      "questionCount": 27,
+      "chapterTags": [
+        "马克思主义哲学",
+        "毛泽东思想"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "english-2025",
+      "year": 2025,
+      "years": [
+        2025
+      ],
+      "subject": "英语",
+      "subjectKey": "english",
+      "setName": "2025 英语真题",
+      "file": "english_2025.json",
+      "questionCount": 0,
+      "chapterTags": [
+        "语音",
+        "情景对话",
+        "阅读理解"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
     }
   ]
 }

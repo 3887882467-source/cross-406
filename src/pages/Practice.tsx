@@ -8,6 +8,7 @@ import { useTasks } from '../state/TaskContext'
 import type { Question } from '../types'
 
 type Filter = 'all' | '单选' | '多选' | '简答' | 'wrong'
+type SubjectFilter = 'all' | 'politics' | 'english' | 'math' | 'management'
 
 interface RecordItem {
   userAnswer: string
@@ -54,12 +55,22 @@ const filters: { key: Filter; label: string }[] = [
   { key: 'wrong', label: '错题' },
 ]
 
+const subjects: { key: SubjectFilter; label: string; color: string }[] = [
+  { key: 'all', label: '全部科目', color: '#111827' },
+  { key: 'politics', label: '📜 政治', color: '#D97706' },
+  { key: 'english', label: '🔤 英语', color: '#0F766E' },
+  { key: 'math', label: '📐 高数二', color: '#5B8DB8' },
+  { key: 'management', label: '📊 管理学', color: '#E15B64' },
+]
+
 const readyExams = exams.filter((exam) => exam.status === 'ready')
-const sourceExams = exams.filter((exam) => exam.status !== 'ready')
 
 export default function Practice() {
   const { settings, updateSubject } = useSettings()
   const { markSubjectDone } = useTasks()
+  
+  // 新增状态：科目筛选
+  const [subjectFilter, setSubjectFilter] = useState<SubjectFilter>('all')
   const [examId, setExamId] = useState(readyExams[0]?.id ?? '')
   const [questions, setQuestions] = useState<Question[]>([])
   const [loading, setLoading] = useState(true)
@@ -80,7 +91,21 @@ export default function Practice() {
   const [aiLoading, setAiLoading] = useState(false)
   const [aiError, setAiError] = useState('')
 
-  const exam = exams.find((item) => item.id === examId) ?? readyExams[0]
+  // 按科目过滤试卷
+  const filteredExams = useMemo(() => {
+    if (subjectFilter === 'all') return readyExams
+    return readyExams.filter(e => e.subjectKey === subjectFilter)
+  }, [subjectFilter])
+
+  // 切换科目时重置试卷选择
+  useEffect(() => {
+    const first = filteredExams[0]
+    if (first && first.id !== examId) {
+      setExamId(first.id)
+    }
+  }, [subjectFilter])
+
+  const exam = exams.find((item) => item.id === examId) ?? filteredExams[0]
   const records = allRecords[examId] ?? {}
 
   useEffect(() => {
@@ -197,8 +222,10 @@ export default function Practice() {
     const next = [...results.filter((item) => item.examId !== examId), result]
     setResults(next)
     localStorage.setItem(RESULTS_KEY, JSON.stringify(next))
-    updateSubject(exam.subjectKey, { current: score })
-    markSubjectDone(exam.subjectKey)
+    if (exam.subjectKey) {
+      updateSubject(exam.subjectKey, { current: score })
+      markSubjectDone(exam.subjectKey)
+    }
     setSubmitted(true)
   }
 
@@ -233,81 +260,100 @@ export default function Practice() {
   const shortOptions = Boolean(question && question.options.length === 4 && question.options.every((item) => item.length <= 26))
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
+      {/* 科目筛选栏 */}
+      <section className="panel p-6">
+        <div className="mb-4">
+          <div className="eyebrow mb-2">科目筛选</div>
+          <div className="flex flex-wrap gap-3">
+            {subjects.map((s) => {
+              const isActive = subjectFilter === s.key
+              const count = s.key === 'all' 
+                ? readyExams.length 
+                : readyExams.filter(e => e.subjectKey === s.key).length
+              return (
+                <button
+                  key={s.key}
+                  type="button"
+                  onClick={() => setSubjectFilter(s.key)}
+                  className={`rounded-xl border-2 px-5 py-3 text-lg font-semibold transition-all ${
+                    isActive
+                      ? 'border-current bg-opacity-10 shadow-md'
+                      : 'border-line bg-panel2 text-copy hover:border-gray-400'
+                  }`}
+                  style={isActive ? { color: s.color, borderColor: s.color, backgroundColor: `${s.color}15` } : {}}
+                >
+                  {s.label}
+                  <span className={`ml-2 text-sm ${isActive ? 'opacity-80' : 'text-muted'}`}>
+                    {count}套
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* 该科目下的试卷选择 */}
+        <div className="mt-4 pt-4 border-t border-line">
+          <div className="eyebrow mb-2">
+            {subjectFilter === 'all' ? '所有试卷' : `${subjects.find(s=>s.key===subjectFilter)?.label} 试卷`}
+          </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {filteredExams.map((item) => {
+              const isActive = item.id === examId
+              const subjColor = ({ politics: '#D97706', english: '#0F766E', math: '#5B8DB8', management: '#E15B64' } as Record<string, string>)[item.subjectKey] || '#111827'
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => setExamId(item.id)}
+                  className={`rounded-lg border px-4 py-2 text-base transition-all ${
+                    isActive
+                      ? 'border-current font-semibold shadow-sm'
+                      : 'border-line bg-white text-copy hover:border-gray-400'
+                  }`}
+                  style={isActive ? { color: subjColor, borderColor: subjColor, backgroundColor: `${subjColor}10` } : {}}
+                >
+                  {item.year && `·${item.year}年`} {item.setName.replace(/\d*\s*年\s*/,'').replace('（已解析）','')}
+                  <span className="ml-2 text-xs opacity-70">{item.questionCount}题</span>
+                </button>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 做题区域头部 */}
       <SectionHead
         eyebrow="Practice"
-        title="刷题 · 真题作战台"
+        title={exam ? `${exam.subject} · ${exam.setName}` : '刷题'}
         right={
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-[14px] text-muted">
-            <span>已做 <span className="num font-semibold text-ink">{done}</span>/{questions.length}</span>
-            <span>答对 <span className="num font-semibold text-teal">{correctCount}</span></span>
-            <span>错题 <span className="num font-semibold text-danger">{wrongCount}</span></span>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[16px]">
+            <span>已做 <span className="font-bold text-ink">{done}</span>/{questions.length}</span>
+            <span className="text-teal">✓ {correctCount}</span>
+            <span className="text-danger">✗ {wrongCount}</span>
             <button type="button" onClick={clearRecords} className="font-medium text-rose underline-offset-4 hover:underline">
-              清除记录
+              清记录
             </button>
           </div>
         }
       />
 
-      {/* 试卷选择：按需加载 */}
-      <section className="panel p-5 sm:p-6">
-        <div className="flex flex-wrap items-center gap-3">
-          <span className="eyebrow">当前试卷</span>
-          <select
-            className="rounded-lg border border-[#D1D5DB] bg-white px-3 py-2 text-[15px] text-[#111827] outline-none focus:border-[#111827]"
-            value={examId}
-            onChange={(event) => setExamId(event.target.value)}
-          >
-            {readyExams.map((item) => (
-              <option key={item.id} value={item.id}>
-                {item.year} · {item.subject} · {item.setName}
-              </option>
-            ))}
-          </select>
-          {exam && (
-            <>
-              <span className="chip border-teal/35 bg-teal/10 text-teal">已解析 {exam.questionCount} 题</span>
-              <span className="text-[13px] text-muted">{exam.chapterTags.slice(0, 3).join(' / ')}…</span>
-            </>
-          )}
-        </div>
-        <details className="mt-4 border-t border-line pt-4">
-          <summary className="cursor-pointer text-[14px] font-medium text-muted hover:text-ink">
-            桌面原始题库文件（{sourceExams.length} 份，已解析的套卷见上方下拉框）
-          </summary>
-          <div className="mt-4 grid gap-2 md:grid-cols-2">
-            {sourceExams.map((item) => (
-              <div key={item.id} className="rounded-lg border border-line bg-panel2/60 px-4 py-3">
-                <div className="text-[14px] font-medium text-ink">{item.setName}</div>
-                <div className="mt-1 text-[13px] leading-5 text-muted">
-                  {item.subject} · {item.years.join('/') || '年份未标注'} · {item.format.toUpperCase()} ·{' '}
-                  <span className="num">{item.status}</span>
-                </div>
-                <div className="num mt-1 break-all text-[12px] text-muted">{item.sourceFile}</div>
-              </div>
-            ))}
-          </div>
-        </details>
-      </section>
-
       {submitted && latest && (
-        <div className="rounded-2xl border border-teal/40 bg-teal/10 p-6">
+        <div className="rounded-2xl border-2 border-teal/40 bg-teal/10 p-6">
           <div className="eyebrow text-teal">Exam Submitted</div>
           <div className="mt-2 flex flex-wrap items-baseline gap-4">
-            <span className="text-[16px] font-semibold text-ink">交卷得分</span>
-            <span className="num text-4xl font-black text-teal">{latest.score}</span>
-            <span className="text-[14px] text-muted">/ {settings.subjects.find((s) => s.key === exam.subjectKey)?.full ?? 100} 分</span>
+            <span className="text-[18px] font-semibold text-ink">交卷得分</span>
+            <span className="text-[42px] font-black text-teal">{latest.score}</span>
+            <span className="text-[16px] text-muted">/ {settings.subjects.find((s) => s.key === exam.subjectKey)?.full ?? 100} 分</span>
           </div>
-          <p className="mt-2 text-[14px] text-copy">
-            答对 {latest.correct} / {latest.total} 题，成绩已同步到首页看板，今日任务已自动打勾。
-          </p>
         </div>
       )}
 
-      <div className="grid gap-4 lg:grid-cols-[260px_minmax(0,1fr)]">
+      <div className="grid gap-6 lg:grid-cols-[300px_minmax(0,1fr)]">
         {/* 左侧题号与筛选 */}
-        <section className="panel h-fit p-5">
-          <div className="eyebrow mb-3">筛选</div>
+        <section className="panel h-fit p-6">
+          <div className="eyebrow mb-4">题型筛选</div>
           <div className="flex flex-wrap gap-2">
             {filters.map((item) => {
               const active = filter === item.key
@@ -316,12 +362,12 @@ export default function Practice() {
                   key={item.key}
                   type="button"
                   onClick={() => setFilter(item.key)}
-                  className={`chip text-[14px] transition-colors ${
+                  className={`chip text-[15px] transition-colors ${
                     active ? 'border-rose/40 bg-roseSoft text-rose' : 'border-line bg-panel2 text-copy hover:border-rose/30 hover:text-ink'
                   }`}
                 >
                   {item.label}
-                  {item.key === 'wrong' && wrongCount > 0 && <span className="num ml-1 font-semibold">{wrongCount}</span>}
+                  {item.key === 'wrong' && wrongCount > 0 && <span className="font-bold">{wrongCount}</span>}
                 </button>
               )
             })}
@@ -329,9 +375,9 @@ export default function Practice() {
 
           <div className="mt-6 flex items-center justify-between">
             <span className="eyebrow">题号</span>
-            <span className="text-[13px] text-muted">共 {visible.length} 题</span>
+            <span className="text-[14px] text-muted">共 {visible.length} 题</span>
           </div>
-          <div className="mt-3 grid grid-cols-5 gap-2">
+          <div className="mt-4 grid grid-cols-5 gap-2.5">
             {visible.map((item) => {
               const record = records[item.id]
               const state = record ? (record.correct ? 'correct' : 'wrong') : 'empty'
@@ -341,95 +387,98 @@ export default function Practice() {
                   key={item.id}
                   type="button"
                   onClick={() => goTo(item.id)}
-                  className={`num flex aspect-square items-center justify-center rounded-lg border text-[14px] font-semibold transition-colors ${
+                  className={`text-lg font-bold transition-all rounded-xl border-2 ${
                     active
-                      ? 'border-rose bg-roseSoft text-rose'
+                      ? 'border-rose bg-roseSoft text-rose scale-110 shadow-md'
                       : state === 'correct'
-                        ? 'border-teal/30 bg-teal/10 text-teal'
+                        ? 'border-teal bg-teal/10 text-teal'
                         : state === 'wrong'
-                          ? 'border-danger/30 bg-danger/10 text-danger'
-                          : 'border-line bg-panel2 text-muted hover:border-rose/30 hover:text-ink'
+                          ? 'border-danger bg-danger/10 text-danger'
+                          : 'border-line bg-white text-muted hover:border-rose/30 hover:text-ink'
                   }`}
                 >
                   {item.id}
                 </button>
               )
             })}
-            {visible.length === 0 && <div className="col-span-5 py-6 text-center text-[14px] text-muted">暂无题目</div>}
+            {visible.length === 0 && <div className="col-span-5 py-8 text-center text-[15px] text-muted">暂无题目</div>}
           </div>
-          <div className="mt-5 space-y-2 border-t border-line pt-4 text-[13px] text-muted">
-            <div className="flex items-center gap-2"><i className="h-2.5 w-2.5 rounded-full bg-teal" />答对</div>
-            <div className="flex items-center gap-2"><i className="h-2.5 w-2.5 rounded-full bg-danger" />答错（进错题本）</div>
-            <div className="flex items-center gap-2"><i className="h-2.5 w-2.5 rounded-full bg-[#C9CDD2]" />未做</div>
+          
+          {/* 图例 */}
+          <div className="mt-6 space-y-2.5 border-t border-line pt-5 text-[14px] text-muted">
+            <div className="flex items-center gap-2"><i className="h-3 w-3 rounded-full bg-teal" />已答对</div>
+            <div className="flex items-center gap-2"><i className="h-3 w-3 rounded-full bg-danger" />错题本</div>
+            <div className="flex items-center gap-2"><i className="h-3 w-3 rounded-full bg-[#C9CDD2]" />未做</div>
           </div>
         </section>
 
         {/* 右侧答题区 */}
-        <div className="min-h-[560px] min-w-0">
+        <div className="min-h-[600px] min-w-0 space-y-5">
           {loading ? (
-            <div className="flex min-h-[300px] items-center justify-center rounded-xl border border-[#D1D5DB] bg-white p-8 text-[15px] text-muted">
+            <div className="flex min-h-[300px] items-center justify-center rounded-2xl border-2 border-dashed border-line bg-panel2 p-8 text-[17px] text-muted">
               正在加载试卷…
             </div>
           ) : loadError ? (
-            <div className="flex min-h-[300px] items-center justify-center rounded-xl border border-danger/30 bg-white p-8 text-[15px] text-danger">
+            <div className="flex min-h-[300px] items-center justify-center rounded-2xl border-2 border-danger/30 bg-danger/5 p-8 text-[17px] text-danger">
               {loadError}
             </div>
           ) : !question || visible.length === 0 ? (
-            <div className="flex min-h-[300px] flex-col items-center justify-center rounded-xl border border-[#D1D5DB] bg-white p-8 text-center shadow-sm">
-              <div className="text-lg font-semibold text-ink">这里暂时没有题</div>
-              <p className="mt-2 text-[14px] text-muted">换个筛选条件看看，或者去做几道题。</p>
+            <div className="flex min-h-[300px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-line bg-panel2 p-8 text-center">
+              <div className="text-[18px] font-semibold text-ink">这里暂时没有题</div>
+              <p className="mt-2 text-[15px] text-muted">换个筛选条件或选另一套试卷。</p>
             </div>
           ) : (
-            <div className="space-y-4">
+            <>
               {/* 题干框 */}
-              <div className="rounded-xl border border-[#D1D5DB] bg-white p-6 shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
+              <div className="rounded-2xl border-2 border-[#D1D5DB] bg-white p-7 shadow-sm">
                 <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-                    <span className="num text-xl font-bold text-[#111827]">第 {question.id} 题</span>
-                    <span className="chip border-line bg-panel2 text-[14px] text-muted">{question.type}</span>
-                    <span className="text-[14px] text-muted">共 {questions.length} 题</span>
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                    <span className="text-[22px] font-black text-[#111827]">第 {question.id} 题</span>
+                    <span className="rounded-lg border-2 border-line bg-panel2 px-3 py-1 text-[15px] font-semibold text-muted">
+                      {question.type}
+                    </span>
+                    <span className="text-[15px] text-muted">共 {questions.length} 题</span>
                   </div>
                   {records[question.id] && (
-                    <span
-                      className={`chip ${
-                        records[question.id].correct
-                          ? 'border-teal/35 bg-teal/10 text-teal'
-                          : 'border-danger/35 bg-danger/10 text-danger'
-                      }`}
-                    >
-                      {records[question.id].correct ? '已答对' : '错题'}
+                    <span className={`rounded-full border-2 px-4 py-1.5 text-[14px] font-bold ${
+                      records[question.id].correct
+                        ? 'border-teal bg-teal/10 text-teal'
+                        : 'border-danger bg-danger/10 text-danger'
+                    }`}>
+                      {records[question.id].correct ? '✓ 已答对' : '✗ 错题'}
                     </span>
                   )}
                 </div>
+                
                 {isLatexQuestion || !hasSourceImage ? (
-                  <div className="mt-5 whitespace-pre-wrap text-[19px] leading-8 text-[#111827]">
+                  <div className="mt-6 whitespace-pre-wrap text-[20px] leading-9 text-[#111827]">
                     <MathText text={question.question} />
                   </div>
                 ) : (
-                  <div className="mt-5 w-full min-w-0 overflow-x-auto">
+                  <div className="mt-6 w-full min-w-0 overflow-x-auto">
                     <img
                       src={`${import.meta.env.BASE_URL}exam/q${question.id}.png`}
                       alt={`第 ${question.id} 题原题`}
-                      className="block h-auto w-full min-w-[620px] object-left"
+                      className="block h-auto w-full min-w-[650px] object-left"
                     />
                   </div>
                 )}
               </div>
 
               {/* 选项框 */}
-              <div className="rounded-xl border border-[#D1D5DB] bg-white p-5 shadow-[0_1px_2px_rgba(17,24,39,0.05)] sm:p-6">
+              <div className="rounded-2xl border-2 border-[#D1D5DB] bg-white p-6 shadow-sm">
                 {question.type !== '简答' ? (
-                  <div className={shortOptions ? 'grid grid-cols-2 gap-3' : 'flex flex-col gap-3'}>
+                  <div className={shortOptions ? 'grid grid-cols-2 gap-4' : 'flex flex-col gap-4'}>
                     {question.options.map((option) => {
                       const letter = option.trim().charAt(0)
                       const correctSet = question.answer.replace(/[^A-D]/g, '').split('')
                       const isPicked = question.type === '多选' ? multiPicked.includes(option) : picked === option
-                      let style = 'border-[#D1D5DB] bg-white text-[#111827] hover:border-[#111827] hover:bg-[#F9FAFB]'
-                      if (isPicked) style = 'border-[#111827] bg-[#F3F4F6] font-semibold text-[#111827]'
+                      let style = 'border-2 border-[#D1D5DB] bg-white text-[#111827] hover:border-[#111827] hover:bg-[#F9FAFB]'
+                      if (isPicked) style = 'border-2 border-[#111827] bg-[#F3F4F6] font-bold text-[#111827]'
                       if (revealed) {
-                        if (correctSet.includes(letter)) style = 'border-teal bg-teal/10 font-semibold text-teal'
-                        else if (isPicked) style = 'border-danger bg-danger/10 font-semibold text-danger'
-                        else style = 'border-[#D1D5DB] bg-white text-[#4B5563]'
+                        if (correctSet.includes(letter)) style = 'border-2 border-teal bg-teal/10 font-bold text-teal'
+                        else if (isPicked) style = 'border-2 border-danger bg-danger/10 font-bold text-danger'
+                        else style = 'border-2 border-[#D1D5DB] bg-white text-[#4B5563]'
                       }
                       return (
                         <button
@@ -445,7 +494,7 @@ export default function Practice() {
                               setPicked(option)
                             }
                           }}
-                          className={`w-full rounded-lg border px-5 py-4 text-left text-lg leading-relaxed transition-colors sm:text-[19px] ${style}`}
+                          className={`w-full rounded-xl border-2 px-6 py-5 text-left text-[18px] leading-relaxed transition-all ${style}`}
                         >
                           <MathText text={option} />
                         </button>
@@ -456,7 +505,7 @@ export default function Practice() {
                         type="button"
                         onClick={submitChoice}
                         disabled={question.type === '多选' ? multiPicked.length === 0 : !picked}
-                        className="mt-1 rounded-lg bg-[#111827] px-6 py-3 text-base font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+                        className="mt-2 rounded-xl bg-[#111827] px-8 py-4 text-[17px] font-bold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
                       >
                         提交答案
                       </button>
@@ -465,17 +514,17 @@ export default function Practice() {
                 ) : (
                   <div>
                     <textarea
-                      className="h-36 w-full resize-y rounded-lg border border-[#D1D5DB] bg-white p-4 text-lg leading-relaxed text-[#111827] outline-none focus:border-[#111827]"
+                      className="h-44 w-full resize-y rounded-xl border-2 border-[#D1D5DB] bg-white p-5 text-[18px] leading-relaxed text-[#111827] outline-none focus:border-[#111827]"
                       placeholder="在这里写下你的答案…"
                       value={text}
                       onChange={(event) => setText(event.target.value)}
                     />
                     {!revealed && (
-                      <div className="mt-4 flex flex-wrap gap-3">
+                      <div className="mt-5 flex flex-wrap gap-4">
                         <button
                           type="button"
                           onClick={() => setRevealed(true)}
-                          className="rounded-lg border border-[#D1D5DB] bg-white px-5 py-2.5 text-base font-medium text-[#111827] hover:border-[#111827]"
+                          className="rounded-xl border-2 border-[#D1D5DB] bg-white px-6 py-3 text-[16px] font-semibold text-[#111827] hover:border-[#111827]"
                         >
                           直接看答案
                         </button>
@@ -483,7 +532,7 @@ export default function Practice() {
                           type="button"
                           onClick={() => markSelf(false)}
                           disabled={!text.trim()}
-                          className="rounded-lg bg-[#111827] px-5 py-2.5 text-base font-semibold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+                          className="rounded-xl bg-[#111827] px-6 py-3 text-[16px] font-bold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
                         >
                           做完 · 对答案
                         </button>
@@ -495,32 +544,32 @@ export default function Practice() {
 
               {/* 解析框 */}
               {revealed && (
-                <div className="space-y-5 rounded-xl border border-[#D1D5DB] bg-white p-6 shadow-[0_1px_2px_rgba(17,24,39,0.05)]">
+                <div className="space-y-6 rounded-2xl border-2 border-[#D1D5DB] bg-white p-7 shadow-sm">
                   <div>
-                    <div className="eyebrow mb-2">正确答案</div>
-                    <div className="text-xl font-bold text-teal"><MathText text={question.answer} /></div>
+                    <div className="eyebrow mb-3">正确答案</div>
+                    <div className="text-[24px] font-black text-teal"><MathText text={question.answer} /></div>
                   </div>
                   <div>
-                    <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-                      <span className="eyebrow">解析</span>
+                    <div className="mb-4 flex items-center justify-between">
+                      <span className="eyebrow">详细解析</span>
                       <button
                         type="button"
                         onClick={() => setAiOpen((prev) => !prev)}
-                        className="rounded-lg border border-amber/40 bg-amber/10 px-3 py-1.5 text-[13px] font-semibold text-amber hover:bg-amber/20"
+                        className="rounded-xl border-2 border-amber/40 bg-amber/10 px-4 py-2 text-[14px] font-bold text-amber hover:bg-amber/20"
                       >
                         ✨ AI 深度解析
                       </button>
                     </div>
-                    <p className="whitespace-pre-wrap text-base leading-8 text-[#1F2937] sm:text-[17px]">
+                    <p className="whitespace-pre-wrap text-[17px] leading-8 text-[#1F2937]">
                       <MathText text={question.explanation} />
                     </p>
                   </div>
 
                   {aiOpen && (
-                    <div className="rounded-xl border border-line bg-panel2/60 p-5">
-                      <div className="flex flex-wrap items-center gap-3">
+                    <div className="rounded-2xl border-2 border-line bg-panel2/60 p-6">
+                      <div className="flex flex-wrap items-center gap-4">
                         <select
-                          className="rounded-lg border border-[#D1D5DB] bg-white px-3 py-2 text-[14px] text-[#111827]"
+                          className="rounded-xl border-2 border-[#D1D5DB] bg-white px-4 py-2.5 text-[15px] text-[#111827]"
                           value={aiProvider}
                           onChange={(event) => setAiProvider(event.target.value as AIProvider)}
                         >
@@ -531,60 +580,61 @@ export default function Practice() {
                           type="button"
                           onClick={runAI}
                           disabled={aiLoading}
-                          className="rounded-lg bg-[#111827] px-4 py-2 text-[14px] font-semibold text-white disabled:opacity-40"
+                          className="rounded-xl bg-[#111827] px-5 py-2.5 text-[15px] font-bold text-white disabled:opacity-40"
                         >
                           {aiLoading ? '分析中…' : '开始分析'}
                         </button>
-                        <span className="text-[13px] text-muted">错因 · 知识点 · 复习建议</span>
+                        <span className="text-[14px] text-muted">错因 · 知识点 · 复习建议</span>
                       </div>
-                      {aiError && <p className="mt-4 text-[14px] text-danger">{aiError}</p>}
+                      {aiError && <p className="mt-5 text-[16px] text-danger">{aiError}</p>}
                       {aiText && (
-                        <div className="mt-4 whitespace-pre-wrap text-[15px] leading-8 text-[#1F2937]">{aiText}</div>
+                        <div className="mt-5 whitespace-pre-wrap text-[16px] leading-8 text-[#1F2937]">{aiText}</div>
                       )}
                     </div>
                   )}
 
                   {question.type === '简答' && (
-                    <div className="flex flex-wrap items-center gap-3 border-t border-line pt-5">
-                      <span className="text-[14px] text-muted">自己批改：</span>
+                    <div className="flex flex-wrap items-center gap-4 border-t-2 border-line pt-6">
+                      <span className="text-[16px] text-muted">自己批改：</span>
                       <button
                         type="button"
                         onClick={() => markSelf(true)}
-                        className={`rounded-lg border px-4 py-1.5 text-[14px] font-semibold ${
+                        className={`rounded-xl border-2 px-5 py-2.5 text-[15px] font-bold ${
                           selfMark === true ? 'border-teal bg-teal/10 text-teal' : 'border-[#D1D5DB] bg-white text-[#111827] hover:border-teal/60'
                         }`}
                       >
-                        我答对了
+                        ✓ 我答对了
                       </button>
                       <button
                         type="button"
                         onClick={() => markSelf(false)}
-                        className={`rounded-lg border px-4 py-1.5 text-[14px] font-semibold ${
+                        className={`rounded-xl border-2 px-5 py-2.5 text-[15px] font-bold ${
                           selfMark === false ? 'border-danger bg-danger/10 text-danger' : 'border-[#D1D5DB] bg-white text-[#111827] hover:border-danger/60'
                         }`}
                       >
-                        我答错了
+                        ✗ 我答错了
                       </button>
                     </div>
                   )}
                 </div>
               )}
 
-              <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+              {/* 导航按钮 */}
+              <div className="flex items-center justify-between gap-4 pt-2">
                 <button
                   type="button"
                   onClick={() => index > 0 && goTo(visible[index - 1].id)}
                   disabled={index <= 0}
-                  className="rounded-lg border border-[#D1D5DB] bg-white px-5 py-2 text-[14px] font-medium text-[#111827] hover:border-[#111827] disabled:opacity-40"
+                  className="rounded-xl border-2 border-[#D1D5DB] bg-white px-6 py-3 text-[16px] font-semibold text-[#111827] hover:border-[#111827] disabled:opacity-40"
                 >
                   ← 上一题
                 </button>
-                <div className="flex items-center gap-4">
-                  <span className="num text-[14px] text-muted">{index + 1} / {visible.length}</span>
+                <div className="flex items-center gap-6">
+                  <span className="text-[16px] text-muted">{index + 1} / {visible.length}</span>
                   <button
                     type="button"
                     onClick={submitExam}
-                    className="rounded-lg bg-[#111827] px-5 py-2 text-[14px] font-semibold text-white hover:opacity-90"
+                    className="rounded-xl bg-[#111827] px-7 py-3 text-[16px] font-bold text-white hover:opacity-90"
                   >
                     交卷算分
                   </button>
@@ -593,12 +643,12 @@ export default function Practice() {
                   type="button"
                   onClick={() => index < visible.length - 1 && goTo(visible[index + 1].id)}
                   disabled={index >= visible.length - 1}
-                  className="rounded-lg border border-[#D1D5DB] bg-white px-5 py-2 text-[14px] font-medium text-[#111827] hover:border-[#111827] disabled:opacity-40"
+                  className="rounded-xl border-2 border-[#D1D5DB] bg-white px-6 py-3 text-[16px] font-semibold text-[#111827] hover:border-[#111827] disabled:opacity-40"
                 >
                   下一题 →
                 </button>
               </div>
-            </div>
+            </>
           )}
         </div>
       </div>

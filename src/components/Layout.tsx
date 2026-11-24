@@ -34,15 +34,15 @@ export default function Layout({ children }: { children: ReactNode }) {
               <span className="text-[11px] font-medium uppercase tracking-wider text-muted">D-</span>
               <span className="num text-sm font-bold text-teal">{left}</span>
             </span>
-            <nav className="flex items-center gap-1 sm:gap-1.5">
+            <nav className="flex items-center gap-1.5 sm:gap-2">
               {navItems.map((item) => (
                 <NavLink
                   key={item.to}
                   to={item.to}
                   end={item.end}
                   className={({ isActive }) =>
-                    `rounded-lg px-2.5 py-2 text-sm font-medium transition-colors sm:px-3 sm:text-[15px] ${
-                      isActive ? 'bg-roseSoft text-rose' : 'text-copy hover:bg-panel hover:text-ink'
+                    `rounded-xl px-3.5 py-2.5 text-[16px] font-semibold transition-all sm:px-4 sm:text-[17px] ${
+                      isActive ? 'bg-roseSoft text-rose shadow-sm' : 'text-copy hover:bg-panel hover:text-ink'
                     }`
                   }
                 >
