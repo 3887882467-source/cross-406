@@ -8,19 +8,7 @@
       "absent",
       "design"
     ],
-    "answer": "",
-    "explanation": ""
-  },
-  {
-    "id": 2,
-    "type": "单选",
-    "question": "A.south",
-    "options": [
-      "soup",
-      "shout",
-      "sound"
-    ],
-    "answer": "",
+    "answer": "A",
     "explanation": ""
   },
   {
@@ -32,7 +20,7 @@
       "proof",
       "flood"
     ],
-    "answer": "",
+    "answer": "A",
     "explanation": ""
   },
   {
@@ -44,7 +32,7 @@
       "leisure",
       "measure"
     ],
-    "answer": "",
+    "answer": "A",
     "explanation": ""
   },
   {
@@ -56,7 +44,7 @@
       "although",
       "clothing"
     ],
-    "answer": "",
+    "answer": "A",
     "explanation": ""
   },
   {
@@ -188,7 +176,8 @@
       "Would you like to do sports with me?",
       "What about you? Do you want to lose weight too?",
       "When and where shall we meet?",
-      "Yes,you'd better not eat junk food."
+      "Yes,you'd better not eat junk food.",
+      "Youarerequiredtochoose"
     ],
     "answer": "",
     "explanation": ""
@@ -291,7 +280,7 @@
   {
     "id": 23,
     "type": "单选",
-    "question": "Who helped the writer at last?",
+    "question": "Who helped the writer at last? 微信公众号：一梦学长 河北专升本资料分享",
     "options": [
       "Her teacher and classmates.",
       "Her parents.",
@@ -299,6 +288,44 @@
       "Her doctor."
     ],
     "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 24,
+    "type": "单选",
+    "question": "What can we learn from the passage? V. Cloze(20 points) Directions:There are 10 blanks inthe followingpassage.For each blank there are 4 choices marked A,B,C and D.You are required to choose the ONE that best fits into the passage.Then mark the corre- spondingletter on theAnswerSheet with a singleline through thecentre. For the first time ever,Gabby was going to be home alone.Her parents and little brother were go- ing on a one-week trip to Hawaii.Gabby didn't want to miss out on school,so she said she would stay at home.It was going to be _31. She could stay up late as she wanted to,invite people over,and sing as_32_as she wanted to. She invited her friends,William and Agatha,to her house after school.\"Wow,it is so cool to have the 33_ house to yourself.Your parents must really trust you!\"Agatha said.Gabby's parents trusted Giabby because she always told the _34_ and did the right thing.\"You should _35 a party.\"William suggested.Gabby and Agatha gasped.\"Didn't you hear what I just said?\"Agatha said.\"I heard you. I just think Gabby should do the _36  thing for once and not be boring,” William said.Gabby did think about it.People at school did think she was a goody-good y and her parents probably wouldn’t 37_\"'Okay! I'll do it!\"Gabby got excited. Gabby invited the whole class to her house on Friday.Everyone was having a good time.People re- ally liked the food and the music at the party.In the end,however,the party got too _38.People started shouting at each other,things broke,and neighbors started complaining about the_ 39 All of a sudden,the door opened.It was Gabby's parents.\"Mum,Dad,aren't you supposed to be here tomorrow?\" Gabby asked in surprise.\"'We were,but we came here to surprise you with a gift,\"her dad said.Now Gabby felt really _40.",
+    "options": [
+      "We should give up when in trouble.",
+      "Being popular is everything.",
+      "With courage and support, we can beat difficulties.",
+      "Acting is the best way to succeed.",
+      "You are required to choose the ONE that best fits into the passage.Then mark the corre-"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 31,
+    "type": "单选",
+    "question": "A.turn down 微信公众号：一梦学长 河北专升本资料分享",
+    "options": [
+      "find out",
+      "work out",
+      "take part in"
+    ],
+    "answer": "A",
+    "explanation": ""
+  },
+  {
+    "id": 34,
+    "type": "单选",
+    "question": "A.excited VI. Writing(15 points) Directions:In this part you are required to write a composition entitled Hebei Elements in My Eyes innoless than100words accordingto thefollowing Chinese outline.Pleaseremembertowriteit on the AnswerSheet.",
+    "options": [
+      "disappointed",
+      "sorry",
+      "dangerous"
+    ],
+    "answer": "A",
     "explanation": ""
   }
 ]

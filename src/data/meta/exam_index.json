@@ -296,7 +296,7 @@
       "subjectKey": "english",
       "setName": "2026 英语真题",
       "file": "english_2026.json",
-      "questionCount": 23,
+      "questionCount": 25,
       "chapterTags": [],
       "status": "ready",
       "sourceFile": null,
@@ -329,6 +329,22 @@
       "setName": "2023 英语真题",
       "file": "english_2023.json",
       "questionCount": 16,
+      "chapterTags": [],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "math-2025-ocr",
+      "year": 2025,
+      "years": [
+        2025
+      ],
+      "subject": "数学",
+      "subjectKey": "math",
+      "setName": "2025数二真题",
+      "file": "math_2025.json",
+      "questionCount": 9,
       "chapterTags": [],
       "status": "ready",
       "sourceFile": null,

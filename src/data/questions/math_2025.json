@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "type": "单选",
+    "question": "函数f(x)= ，则f(-1)=（B. x²+1,x≥0 fc-1)=(e+-1)/=e-1=0. f)(x+)|x=)=1+1=2. sin(x-1) Sin0~0. Sino%主hN",
+    "options": [
+      "-1",
+      "1"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 2,
+    "type": "单选",
+    "question": "极限lim x²-1 Smcx-1) x-1 =莉肃= smcxl sinco, cosoo, arctaneo x200 xil 有界出级. 0×界=0",
+    "options": [
+      "-1",
+      "1"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 3,
+    "type": "单选",
+    "question": "设函数f(x)=2\"+cosx，则f\"(x)=（C） 2\" 1n 2-sin x f(x1=(2x+l0>x)=2xn2-5mx :f=2x f(=x(ha) fx=2xM2.fx)xA(m2).f\"(x)=2(h}3 f以}=losx f(06) =losx fit-Simx，fx)losn.fx)=Shx.f(xloy",
+    "options": [
+      "2*-sinx",
+      "2*+sin x",
+      "2*1n2+sinx"
+    ],
+    "answer": "C",
+    "explanation": ""
+  },
+  {
+    "id": 4,
+    "type": "单选",
+    "question": "设函数f(x)=x²-3x²-9x+9，则该图形的拐点为 c/(1,-2) fix)=3x²6x-9. D:(∞,+0) f\"ixk6x-6=0. x=1. (-0, 1) 内f(x)<0, (∞,1) 内fx)是hg C 1i+00) 内 f1x) )0, (1 t∞0) 内fx)2的 =)拐点(小、2). sinx 则dy= (B)y=yx",
+    "options": [
+      "(-1,14)",
+      "(0,9)",
+      "(3,-18)"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 5,
+    "type": "单选",
+    "question": "不定积分{ f(2x)dx=( D) f(x)+C f(2x)+C fix)dx=fixtC；[fxx]fx) Jofx=f（x)+C；fxdx=fixldx f'2xdx=f(2x)d(2x) =f(2x)+C 方：①(Sxmxdxj=shx 7+x=xp(x@ ③∫d(mx) =mx+C x=xp",
+    "options": [
+      "f(x)+C",
+      "f(2x)+C"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 6,
+    "type": "单选",
+    "question": "设函数z= ysin(x+y)，则 Oxoy =(ysimxty]=ycosxty) 2=[yoscxty)]y = losix+y) -ysim(xty)",
+    "options": [
+      "cos(x+y)+ ysin(x+y)",
+      "ycos(x+ y)",
+      "cos(x+ y)- ysin(x+ y)",
+      "-ysin(x+ y)"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 7,
+    "type": "单选",
+    "question": "下列级数收敛的是（A) 级救效性：常调P.. (-1)\" 比段比值5奢软 还有支得P级 外个不为 n=1 研A.需p收叙)P绝对致 locpi条件收领. P=↓>O，收 I发效· D，收敏 图经》，发敏 [q1≥1发教",
+    "options": [
+      "需p收叙)P绝对致",
+      "m"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 8,
+    "type": "单选",
+    "question": "微分方程y\"+y-x=0的解是 c. y=cosx-x : J\"+y-x=0. y\"ty=x y'=losx+l. y\"=-Simx y\"+y=-smx+s²x+x=x",
+    "options": [
+      "y=cosx",
+      "y = sin x",
+      "y=sinx+x",
+      "y=simx+x."
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 9,
+    "type": "单选",
+    "question": "行列式1 abc 2901 (a-1)(a-2) c.(a-1)(a+2) =a²3a+2{a-y(a-2) 03a²-l 100a-3at2l =(-1)·(a-1)·(a-1) =(α-)(a-2) 4a²",
+    "options": [
+      "(a+1)(a-2)",
+      "(a+1)(a+2)"
+    ],
+    "answer": "D",
+    "explanation": ""
+  }
+]

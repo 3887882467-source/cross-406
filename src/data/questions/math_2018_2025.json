@@ -1,0 +1,241 @@
+[
+  {
+    "id": 1,
+    "type": "单选",
+    "question": "函数f(x)= 则f（-1)=（） x²+1,x≥0 sin (x-1)",
+    "options": [
+      "-1",
+      "0",
+      "1",
+      "2"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 2,
+    "type": "单选",
+    "question": "lim 1←x x²-1",
+    "options": [
+      "-1",
+      "1"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 3,
+    "type": "单选",
+    "question": "设函数f(x)=2*+cosx，则f'(x)=（）",
+    "options": [
+      "2*-sin x",
+      "2*+sin x",
+      "2* 1n2-sin x",
+      "2* ln2+sin x"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 4,
+    "type": "单选",
+    "question": "设函数f(x)=x²-3x²-9x+9，则该图形的拐点为（) sinx",
+    "options": [
+      "(-1,14)",
+      "(0,9)",
+      "(1,-2)",
+      "(3,-18)"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 5,
+    "type": "单选",
+    "question": "不定积分∫f\"(2x)dx=（） f(2x)+C",
+    "options": [
+      "f(x)+C",
+      "f(2x)+C"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 6,
+    "type": "单选",
+    "question": "设二元函数z=ysin(x+y)，则 Oxoy",
+    "options": [
+      "cos(x+y)+ ysin(x+y)",
+      "ycos(x+y)",
+      "cos(x+y)-ysin(x+y)",
+      "-ysin(x+y)"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 7,
+    "type": "单选",
+    "question": "下列级数收敛的是（）",
+    "options": [
+      "(",
+      "n-1"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 8,
+    "type": "单选",
+    "question": "微分方程y\"+y-x=0的解为（）",
+    "options": [
+      "y=cosx",
+      "y = sin x",
+      "y=cosx-x",
+      "y= sinx+x"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 9,
+    "type": "单选",
+    "question": "三阶行列式1 α的值为（） 二、填空题（本大题共5小题，每小题4分，共20分．将答案填写在答题纸的相应位置",
+    "options": [
+      "(a-1)(a-2)",
+      "(a +1)(a -2)",
+      "(a-1)(a+2)",
+      "(a +1)(a + 2)"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 10,
+    "type": "单选",
+    "question": "函数y=√4-x²+ln(x-1)的定义域是（ sin 2x-x",
+    "options": [
+      "(1, 2)",
+      "(1, 2]",
+      "[1, 2)",
+      "[1, 2]"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 12,
+    "type": "单选",
+    "question": "设f(x)=e²x，则f\"(x)=（ In(1-x), x<1",
+    "options": [
+      "e2x",
+      "2e2x",
+      "4e2x",
+      "8e2x"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 13,
+    "type": "单选",
+    "question": "函数f(x)=0, x=1在点x=1（ [ex-1 -1, x>1] x=2t+cost",
+    "options": [
+      "连续",
+      "仅左连续",
+      "仅右连续",
+      "左右都不连续"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 14,
+    "type": "单选",
+    "question": "设由参数方程 所确定的函数y=y(x)，则 y=2t+sint dx|=0",
+    "options": [
+      "2",
+      "3"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 15,
+    "type": "单选",
+    "question": "幂级数≥ 的收敛域是（ x-y",
+    "options": [
+      "(-1， 1)",
+      "(-1, 1]",
+      "[-1,1]",
+      "[-1, 1)"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 16,
+    "type": "单选",
+    "question": "已知f(x)的一个原函数是 sin 2x，则不定积分[f\"(x)bdx=（ -cos2x+C 二、填空题（本大题共5小题，每小题4分，共20分。将答案填写在答顺卡的相应位置上） x(e*-1)",
+    "options": [
+      "sin2x+C",
+      "cos2x+C",
+      "2cos2x+C",
+      "5",
+      "7",
+      "19",
+      "21"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 17,
+    "type": "单选",
+    "question": "以下函数在定义域上是偶函数的是（",
+    "options": [
+      "y =xsin x",
+      "y=xcoSx",
+      "y= xe*",
+      "y= xinx"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 18,
+    "type": "单选",
+    "question": "已知函数 f(x)=sinx²，则 f(0)的值是（",
+    "options": [
+      "-1",
+      "(",
+      "1"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 19,
+    "type": "单选",
+    "question": "函数f(x)=2x²+3x²-12x-5的单调递减区间是（",
+    "options": [
+      "(-∞0,-2)",
+      "(1,+)",
+      "(-1,2)",
+      "(-2,1)"
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "id": 20,
+    "type": "单选",
+    "question": "设函数 f(x)= Jsin(2t+1)dt，则 f(x)=（",
+    "options": [
+      "sin(2x +1)",
+      "cos(2x +1)"
+    ],
+    "answer": "",
+    "explanation": ""
+  }
+]
