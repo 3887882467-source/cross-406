@@ -1,0 +1,640 @@
+[
+  {
+    "id": 1,
+    "type": "单选",
+    "question": "Ⅰ. Phonetics — 划线部分发音不同的是：A. d̲e̲corate（e）  B. e̲n̲ergy（e）  C. m̲e̲dia（e）  D. prof̲e̲ssor（e）",
+    "options": [
+      "A. decorate",
+      "B. energy",
+      "C. media",
+      "D. professor"
+    ],
+    "answer": "C",
+    "explanation": "decorate、energy、professor 中划线 e 发 /e/；media 中 e 发 /iː/，故选 C。"
+  },
+  {
+    "id": 2,
+    "type": "单选",
+    "question": "Ⅱ. Phonetics — 划线部分发音不同的是：A. excu̲se̲（u）  B. conti̲nu̲e（u）  C. refu̲se̲（u）  D. su̲c̲cess（u）",
+    "options": [
+      "A. excuse",
+      "B. continue",
+      "C. refuse",
+      "D. success"
+    ],
+    "answer": "D",
+    "explanation": "excuse、continue、refuse 中 u 发 /juː/；success 中 u 发 /ə/，故选 D。"
+  },
+  {
+    "id": 3,
+    "type": "单选",
+    "question": "Ⅲ. Phonetics — 划线部分发音不同的是：A. performan̲ce̲（ce）  B. c̲o̲mmon（c）  C. r̲e̲cycle（ec）  D. c̲e̲lebrate（ce）",
+    "options": [
+      "A. performance",
+      "B. common",
+      "C. recycle",
+      "D. celebrate"
+    ],
+    "answer": "A",
+    "explanation": "common、recycle、celebrate 中划线 c 发 /k/；performance 词尾 ce 发 /s/，故选 A。"
+  },
+  {
+    "id": 4,
+    "type": "单选",
+    "question": "Ⅳ. Phonetics — 划线部分发音不同的是：A. floo̲d̲（oo）  B. spoo̲n̲（oo）  C. soo̲n̲（oo）  D. choo̲se̲（oo）",
+    "options": [
+      "A. flood",
+      "B. spoon",
+      "C. soon",
+      "D. choose"
+    ],
+    "answer": "A",
+    "explanation": "spoon、soon、choose 中 oo 发 /uː/；flood 中 oo 发 /ʌ/，故选 A。"
+  },
+  {
+    "id": 5,
+    "type": "单选",
+    "question": "Ⅴ. Phonetics — 划线部分发音不同的是：A. charge 中 a  B. character 中 a  C. church 中 u  D. match 中 a",
+    "options": [
+      "A. charge",
+      "B. character",
+      "C. church",
+      "D. match"
+    ],
+    "answer": "B",
+    "explanation": "charge、church、match 中 ch 发 /tʃ/；character 中 ch 发 /k/，故选 B。"
+  },
+  {
+    "id": 6,
+    "type": "单选",
+    "question": "Ⅱ. Situational Dialogues — Laura: Hi, Tim! / Tim: Hi, Laura! Nice to meet you! What are you doing here? / Laura: ___ There are so many clubs.",
+    "options": [
+      "A. Why not fill in this form to join us?",
+      "B. Well, I'm just looking around.",
+      "C. How long have you been here?",
+      "D. Environmental protection."
+    ],
+    "answer": "B",
+    "explanation": "上句问\"你在这里做什么\"，接\"我只是随便看看\"最自然，后面再说\"这里有好多社团\"。"
+  },
+  {
+    "id": 7,
+    "type": "单选",
+    "question": "Tim: There are twenty clubs in total and I'm in charge of the Green Life Club. Would you like to join us? / Laura: Green Life? What's it about? / Tim: ___ We want more people to know that the earth is in danger and we need to do something about it now.",
+    "options": [
+      "A. Why not fill in this form to join us?",
+      "B. Well, I'm just looking around.",
+      "C. How long have you been here?",
+      "D. Environmental protection."
+    ],
+    "answer": "D",
+    "explanation": "问\"这个社团是关于什么的\"，后面讲地球处于危险中，所以答\"环境保护\"。"
+  },
+  {
+    "id": 8,
+    "type": "单选",
+    "question": "Laura: That's really true. We are hearing a lot about it these days. ___ / Tim: We make signs to put up in classrooms and dormitories to arouse students' awareness about saving water and electricity.",
+    "options": [
+      "A. Why not fill in this form to join us?",
+      "B. Well, I'm just looking around.",
+      "C. What kind of activities do you have?",
+      "D. I'm sure you will benefit from it."
+    ],
+    "answer": "C",
+    "explanation": "Tim 回答的是具体活动（做标牌、植树、捡垃圾），所以问的是\"你们有什么活动\"。"
+  },
+  {
+    "id": 9,
+    "type": "单选",
+    "question": "Laura: Well, I'm kind of interested in your club. The problem is I have joined the Student Union and the Drama Club. ___ / Tim: Well, when I was a freshman last year, I joined four clubs. And now I'm just with this one.",
+    "options": [
+      "A. Why not fill in this form to join us?",
+      "B. I'm afraid I won't have enough time and energy.",
+      "C. How long have you been here?",
+      "D. I'm sure you will benefit from it."
+    ],
+    "answer": "B",
+    "explanation": "Laura 说已经加了两个社团，担心时间精力不够，Tim 才用自己的经历劝她。"
+  },
+  {
+    "id": 10,
+    "type": "单选",
+    "question": "Tim: You'll gradually get to know what really interests you. ___ / Laura: Thank you for your advice. I'll have a try.",
+    "options": [
+      "A. Why not fill in this form to join us?",
+      "B. How long have you been here?",
+      "C. I'm afraid I won't have enough time and energy.",
+      "D. I'm sure you will benefit from it."
+    ],
+    "answer": "D",
+    "explanation": "Tim 给出建议后补一句\"我相信你会从中受益\"，Laura 才道谢。"
+  },
+  {
+    "id": 11,
+    "type": "单选",
+    "question": "Passage One — According to the passage, under the influence of COVID-19, besides offline meeting, some companies also have meetings ___.",
+    "options": [
+      "A. airline",
+      "B. online",
+      "C. underline",
+      "D. outline"
+    ],
+    "answer": "B",
+    "explanation": "首段说很多公司转移到线上，会议以虚拟方式举行，故选 online。同时四词形近，考辨义。"
+  },
+  {
+    "id": 12,
+    "type": "单选",
+    "question": "How many pairs were there in the study published in Nature?",
+    "options": [
+      "A. 602",
+      "B. 1490",
+      "C. 745",
+      "D. 301"
+    ],
+    "answer": "D",
+    "explanation": "原文说 602 人被随机分成 pairs（对），602÷2=301 对。1490 是后面工程师实验的人数，不要混。"
+  },
+  {
+    "id": 13,
+    "type": "单选",
+    "question": "What does the phrase \"in person\" in the passage mean?",
+    "options": [
+      "A. Going somewhere and doing something oneself.",
+      "B. Communicating by email.",
+      "C. Asking someone else for help.",
+      "D. Experiencing something different."
+    ],
+    "answer": "A",
+    "explanation": "in person 意为\"亲自、当面\"，与视频会议相对，故选 A。"
+  },
+  {
+    "id": 14,
+    "type": "单选",
+    "question": "According to the last paragraph, the study results suggested that ___.",
+    "options": [
+      "A. if a company wants to get more creative ideas, online meetings should be held",
+      "B. all tasks can be done online",
+      "C. if a company wants to get more creative ideas, in-person meetings should be held",
+      "D. businesses should pay less attention on which tasks can be done online"
+    ],
+    "answer": "C",
+    "explanation": "末段说像\"想新点子\"这类任务应该当面进行，企业要仔细区分哪些任务适合线上，故选 C。"
+  },
+  {
+    "id": 15,
+    "type": "单选",
+    "question": "Which of the following statements is NOT TRUE?",
+    "options": [
+      "A. The study published in Nature showed that online meetings may affect creativity.",
+      "B. The study with engineer showed that the virtual pairs made slightly better decisions about which idea to choose.",
+      "C. Focusing on a screen can affect a person's creativity.",
+      "D. The in-person pairs had fewer ideas than virtual pairs."
+    ],
+    "answer": "D",
+    "explanation": "原文明确说 in-person pairs had more ideas，D 说反了，故为 NOT TRUE。"
+  },
+  {
+    "id": 16,
+    "type": "单选",
+    "question": "Passage Two — The word \"intelligence\" in paragraph 1 can be best understood as the ability to ___.",
+    "options": [
+      "A. speak",
+      "B. dance",
+      "C. learn",
+      "D. paint"
+    ],
+    "answer": "C",
+    "explanation": "首段说学音乐让孩子更聪明、better able to learn new things，intelligence 即学习能力，选 C。"
+  },
+  {
+    "id": 17,
+    "type": "单选",
+    "question": "According to the second paragraph, most of the American adults think that ___.",
+    "options": [
+      "A. children's ability to learn can be improved by music lessons",
+      "B. teachers are satisfied with students who can play a new song",
+      "C. students with good performance in school should learn music",
+      "D. Music lessons are more important than lessons in school"
+    ],
+    "answer": "A",
+    "explanation": "第二段说约 80% 美国成年人认为音乐课提高孩子的学习能力，故选 A。"
+  },
+  {
+    "id": 18,
+    "type": "单选",
+    "question": "Which of the following belongs to \"visual arts\"?",
+    "options": [
+      "A. Music",
+      "B. Photography",
+      "C. Literature",
+      "D. Talk show"
+    ],
+    "answer": "B",
+    "explanation": "文中解释 visual arts 是\"可以看见的艺术\"，四个选项中只有摄影是视觉艺术，选 B。"
+  },
+  {
+    "id": 19,
+    "type": "单选",
+    "question": "Which of the following statements is not supported by Samuel Mehr?",
+    "options": [
+      "A. Learning to play a musical instrument can't improve a child's intellectual development",
+      "B. Kids gain no advantage in their mental ability from participating in music classes.",
+      "C. Music lessons may not add to students' chance receiving the best education.",
+      "D. Music training is unimportant"
+    ],
+    "answer": "D",
+    "explanation": "Mehr 说音乐训练虽不提高智力，但因文化原因仍然重要（music is important for us），故 D 不被支持。"
+  },
+  {
+    "id": 20,
+    "type": "单选",
+    "question": "What can be the best title for this passage?",
+    "options": [
+      "A. The Best Way to Improve Students' Intelligence",
+      "B. No Evidence Found on the Effect of Musical Training on Intelligence",
+      "C. Benefits of Musical Training",
+      "D. How to Improve Students' Performance in School"
+    ],
+    "answer": "B",
+    "explanation": "全文围绕\"没有证据表明音乐训练能提高智力\"展开，B 最符合主旨。"
+  },
+  {
+    "id": 21,
+    "type": "单选",
+    "question": "Section B 选词填空 — In a study from the University of Cambridge and China's Fudan University, ___ 500,000 British adults between the ages of 38 and 73 completed surveys about their sleep.",
+    "options": [
+      "A. nearly",
+      "B. showing",
+      "C. closely",
+      "D. health",
+      "E. getting",
+      "F. completed",
+      "G. average",
+      "H. challenging",
+      "I. salary",
+      "J. part",
+      "K. confident",
+      "L. exercise",
+      "M. spend",
+      "N. teach",
+      "O. negative"
+    ],
+    "answer": "A",
+    "explanation": "修饰数字 500,000 用 nearly（将近），故选 A。"
+  },
+  {
+    "id": 22,
+    "type": "单选",
+    "question": "Many scientists also ___ cognitive tests, and about a third completed survey on their mental health and well-being.",
+    "options": [
+      "A. nearly",
+      "B. showing",
+      "C. closely",
+      "D. health",
+      "E. getting",
+      "F. completed",
+      "G. average",
+      "H. challenging",
+      "I. salary",
+      "J. part",
+      "K. confident",
+      "L. exercise",
+      "M. spend",
+      "N. teach",
+      "O. negative"
+    ],
+    "answer": "F",
+    "explanation": "\"完成认知测试\"用 completed cognitive tests，与后面 completed survey 并列，选 F。"
+  },
+  {
+    "id": 23,
+    "type": "单选",
+    "question": "…about a third completed survey on their mental ___ and well-being.",
+    "options": [
+      "A. nearly",
+      "B. showing",
+      "C. closely",
+      "D. health",
+      "E. getting",
+      "F. completed",
+      "G. average",
+      "H. challenging",
+      "I. salary",
+      "J. part",
+      "K. confident",
+      "L. exercise",
+      "M. spend",
+      "N. teach",
+      "O. negative"
+    ],
+    "answer": "D",
+    "explanation": "mental health and well-being 为固定搭配\"心理健康与幸福感\"，选 D。"
+  },
+  {
+    "id": 24,
+    "type": "单选",
+    "question": "The results ___ that participants who said they slept an average of about seven hours a day did best in the cognitive tests.",
+    "options": [
+      "A. nearly",
+      "B. showing",
+      "C. closely",
+      "D. health",
+      "E. getting",
+      "F. completed",
+      "G. average",
+      "H. challenging",
+      "I. salary",
+      "J. part",
+      "K. confident",
+      "L. exercise",
+      "M. spend",
+      "N. teach",
+      "O. negative"
+    ],
+    "answer": "B",
+    "explanation": "此处需谓语动词，The results showing that… 表示\"结果表明\"，选 B。"
+  },
+  {
+    "id": 25,
+    "type": "单选",
+    "question": "…participants who said they slept an ___ of about seven hours a day…",
+    "options": [
+      "A. nearly",
+      "B. showing",
+      "C. closely",
+      "D. health",
+      "E. getting",
+      "F. completed",
+      "G. average",
+      "H. challenging",
+      "I. salary",
+      "J. part",
+      "K. confident",
+      "L. exercise",
+      "M. spend",
+      "N. teach",
+      "O. negative"
+    ],
+    "answer": "G",
+    "explanation": "an average of 为固定搭配\"平均\"，选 G。"
+  },
+  {
+    "id": 26,
+    "type": "单选",
+    "question": "…the researchers are not yet sure why too much sleep could have a ___ effect…",
+    "options": [
+      "A. nearly",
+      "B. showing",
+      "C. closely",
+      "D. health",
+      "E. getting",
+      "F. completed",
+      "G. average",
+      "H. challenging",
+      "I. salary",
+      "J. part",
+      "K. confident",
+      "L. exercise",
+      "M. spend",
+      "N. teach",
+      "O. negative"
+    ],
+    "answer": "O",
+    "explanation": "睡太多有\"负面\"影响，与下文睡得差呼应，选 negative。"
+  },
+  {
+    "id": 27,
+    "type": "单选",
+    "question": "…one idea was that people might ___ longer time in bed if they sleep poorly and wake up a lot.",
+    "options": [
+      "A. nearly",
+      "B. showing",
+      "C. closely",
+      "D. health",
+      "E. getting",
+      "F. completed",
+      "G. average",
+      "H. challenging",
+      "I. salary",
+      "J. part",
+      "K. confident",
+      "L. exercise",
+      "M. spend",
+      "N. teach",
+      "O. negative"
+    ],
+    "answer": "M",
+    "explanation": "spend time in bed 为固定搭配\"花时间在床上\"，选 M。"
+  },
+  {
+    "id": 28,
+    "type": "单选",
+    "question": "However, Russell Foster, a sleep expert at the University of Oxford who did not take ___ in the study, disagreed with the results…",
+    "options": [
+      "A. nearly",
+      "B. showing",
+      "C. closely",
+      "D. health",
+      "E. getting",
+      "F. completed",
+      "G. average",
+      "H. challenging",
+      "I. salary",
+      "J. part",
+      "K. confident",
+      "L. exercise",
+      "M. spend",
+      "N. teach",
+      "O. negative"
+    ],
+    "answer": "J",
+    "explanation": "take part in 为固定搭配\"参加\"，选 J。"
+  },
+  {
+    "id": 29,
+    "type": "单选",
+    "question": "Sahakian said that ___ a good night's sleep is important for people of all ages…",
+    "options": [
+      "A. nearly",
+      "B. showing",
+      "C. closely",
+      "D. health",
+      "E. getting",
+      "F. completed",
+      "G. average",
+      "H. challenging",
+      "I. salary",
+      "J. part",
+      "K. confident",
+      "L. exercise",
+      "M. spend",
+      "N. teach",
+      "O. negative"
+    ],
+    "answer": "E",
+    "explanation": "getting a good night's sleep 作主语，意为\"睡个好觉\"，选 E。"
+  },
+  {
+    "id": 30,
+    "type": "单选",
+    "question": "…adding, \"I think it is as important as getting ___.\"",
+    "options": [
+      "A. nearly",
+      "B. showing",
+      "C. closely",
+      "D. health",
+      "E. getting",
+      "F. completed",
+      "G. average",
+      "H. challenging",
+      "I. salary",
+      "J. part",
+      "K. confident",
+      "L. exercise",
+      "M. spend",
+      "N. teach",
+      "O. negative"
+    ],
+    "answer": "L",
+    "explanation": "把睡好觉和锻炼相比，getting exercise 符合语义，选 L。"
+  },
+  {
+    "id": 31,
+    "type": "单选",
+    "question": "Ⅳ. Cloze — Whether you are waiting at airports or spending time on trains, buses or cars, these situations can give you great ___ to learn English.",
+    "options": [
+      "A. challengers",
+      "B. factors",
+      "C. chances",
+      "D. skills"
+    ],
+    "answer": "C",
+    "explanation": "give you great chances to learn English 意为\"给你很好的学英语机会\"，选 C。"
+  },
+  {
+    "id": 32,
+    "type": "单选",
+    "question": "Airports and train stations often have ___ selling published materials.",
+    "options": [
+      "A. stores",
+      "B. restrooms",
+      "C. elevators",
+      "D. security"
+    ],
+    "answer": "A",
+    "explanation": "卖出版物的应是商店 stores，选 A。"
+  },
+  {
+    "id": 33,
+    "type": "单选",
+    "question": "___ you do not understand all the words, you can use the images to help you understand some of them.",
+    "options": [
+      "A. Not until",
+      "B. As if",
+      "C. So that",
+      "D. Even if"
+    ],
+    "answer": "D",
+    "explanation": "Even if 引导让步状语从句\"即使你不认识所有单词\"，选 D。"
+  },
+  {
+    "id": 34,
+    "type": "单选",
+    "question": "Later, you can use an online dictionary to look ___ the words you want to learn.",
+    "options": [
+      "A. up",
+      "B. at",
+      "C. after",
+      "D. around"
+    ],
+    "answer": "A",
+    "explanation": "look up 意为\"查阅（词典）\"，选 A。"
+  },
+  {
+    "id": 35,
+    "type": "单选",
+    "question": "While traveling, we ___ see people from other countries who are also waiting or exploring a new place.",
+    "options": [
+      "A. seldom",
+      "B. often",
+      "C. quickly",
+      "D. lonely"
+    ],
+    "answer": "B",
+    "explanation": "旅行时\"经常\"见到外国人，often 符合语境，选 B。"
+  },
+  {
+    "id": 36,
+    "type": "单选",
+    "question": "If you hear someone asking for information in English, you ___ offer to help or simply greet them in English.",
+    "options": [
+      "A. might",
+      "B. must",
+      "C. will",
+      "D. dare"
+    ],
+    "answer": "A",
+    "explanation": "might 表委婉建议\"可以主动提供帮助\"，语气最合适，选 A。"
+  },
+  {
+    "id": 37,
+    "type": "单选",
+    "question": "A friendly conversation is usually welcome ___ travelers share their experiences.",
+    "options": [
+      "A. but",
+      "B. yet",
+      "C. as",
+      "D. until"
+    ],
+    "answer": "C",
+    "explanation": "as 引导原因状语从句\"因为旅行者会分享经历\"，选 C。"
+  },
+  {
+    "id": 38,
+    "type": "单选",
+    "question": "Writing about your day is a great way to ___ your English writing skill.",
+    "options": [
+      "A. produce",
+      "B. protect",
+      "C. practice",
+      "D. pretend"
+    ],
+    "answer": "C",
+    "explanation": "practice your writing skill 意为\"练习写作技能\"，选 C。"
+  },
+  {
+    "id": 39,
+    "type": "单选",
+    "question": "Draw images of ___ you see or do in your travels and look up the English words for the places or events later.",
+    "options": [
+      "A. what",
+      "B. that",
+      "C. which",
+      "D. where"
+    ],
+    "answer": "A",
+    "explanation": "of 后接宾语从句，what 在从句中作 see/do 的宾语，意为\"所看到或做的事\"，选 A。"
+  },
+  {
+    "id": 40,
+    "type": "单选",
+    "question": "Using English to ___ your holiday will help you to put new words to use and make them stay in your memory longer.",
+    "options": [
+      "A. delay",
+      "B. determine",
+      "C. divide",
+      "D. describe"
+    ],
+    "answer": "D",
+    "explanation": "describe your holiday 意为\"描述你的假期\"，与上文记录旅行呼应，选 D。"
+  },
+  {
+    "id": 41,
+    "type": "简答",
+    "question": "Ⅴ. Writing (10 points) — Directions: In this part you are required to write a composition entitled My View on Failure in no less than 120 words according to the following Chinese outline. 1. 人们对失败的态度与看法；2. 你对失败的理解；3. 从失败中获得了什么。",
+    "options": [],
+    "answer": "My View on Failure（范文见解析）",
+    "explanation": "参考范文：My View on Failure\n\nFailure is a common part of life. Different people hold different attitudes towards it. Some feel discouraged and even afraid when they fail, while others regard failure as a valuable experience.\n\nIn my view, failure is not the end of the road but a chance to learn. It tells us where we are weak and reminds us to adjust our methods. What matters most is not whether we fail, but whether we can stand up again.\n\nFrom failure I have learned patience and persistence. Last term I failed a math exam, but I analyzed my mistakes and kept practising. In the next exam I made great progress. Failure, therefore, is a teacher that helps us grow.\n\n写作要点：① 人们对失败的两种态度；② 自己把失败看作学习机会；③ 举一个失败后进步的例子并总结。"
+  }
+]

@@ -1,0 +1,251 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-23",
+  "sourceDir": "C:/Users/WN/Desktop/专升本题库",
+  "note": "ready=已转成可刷题JSON；source_only=桌面原始文件，尚未解析为题库JSON；archived=压缩包；image=图片资料。",
+  "exams": [
+    {
+      "id": "math2-2025",
+      "year": 2025,
+      "years": [
+        2025
+      ],
+      "subject": "高等数学（二）",
+      "subjectKey": "math",
+      "setName": "2025 高等数学（二）真题（已解析）",
+      "file": "math2_2025.json",
+      "questionCount": 20,
+      "chapterTags": [
+        "函数与极限",
+        "导数与微分",
+        "中值定理与导数应用",
+        "不定积分",
+        "定积分",
+        "多元函数微积分",
+        "常微分方程",
+        "行列式",
+        "线性方程组"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "politics-2024",
+      "year": 2024,
+      "years": [
+        2024
+      ],
+      "subject": "政治",
+      "subjectKey": "politics",
+      "setName": "2024 政治真题（已解析）",
+      "file": "politics_2024.json",
+      "questionCount": 31,
+      "chapterTags": [
+        "马克思主义哲学",
+        "毛泽东思想",
+        "中国特色社会主义"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "english-2024",
+      "year": 2024,
+      "years": [
+        2024
+      ],
+      "subject": "英语",
+      "subjectKey": "english",
+      "setName": "2024 英语真题（已解析）",
+      "file": "english_2024.json",
+      "questionCount": 14,
+      "chapterTags": [
+        "语音",
+        "情景对话",
+        "阅读理解"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "politics-2023",
+      "year": 2023,
+      "years": [
+        2023
+      ],
+      "subject": "政治",
+      "subjectKey": "politics",
+      "setName": "2023 政治真题（已解析）",
+      "file": "politics_2023.json",
+      "questionCount": 37,
+      "chapterTags": [
+        "马克思主义哲学",
+        "毛泽东思想",
+        "中国特色社会主义",
+        "时事政治"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "english-2022",
+      "year": 2022,
+      "years": [
+        2022
+      ],
+      "subject": "英语",
+      "subjectKey": "english",
+      "setName": "2022 英语真题（已解析）",
+      "file": "english_2022.json",
+      "questionCount": 41,
+      "chapterTags": [
+        "语音",
+        "情景对话",
+        "阅读理解",
+        "选词填空",
+        "完形填空",
+        "写作"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "politics-2020",
+      "year": 2020,
+      "years": [
+        2020
+      ],
+      "subject": "政治",
+      "subjectKey": "politics",
+      "setName": "2020 政治真题（已解析）",
+      "file": "politics_2020.json",
+      "questionCount": 33,
+      "chapterTags": [
+        "马克思主义哲学",
+        "毛泽东思想",
+        "中国特色社会主义",
+        "时事政治"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "politics-2019",
+      "year": 2019,
+      "years": [
+        2019
+      ],
+      "subject": "政治",
+      "subjectKey": "politics",
+      "setName": "2019 政治真题（已解析）",
+      "file": "politics_2019.json",
+      "questionCount": 34,
+      "chapterTags": [
+        "马克思主义哲学",
+        "毛泽东思想",
+        "中国特色社会主义",
+        "时事政治"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "politics-2018",
+      "year": 2018,
+      "years": [
+        2018
+      ],
+      "subject": "政治",
+      "subjectKey": "politics",
+      "setName": "2018 政治真题（已解析）",
+      "file": "politics_2018.json",
+      "questionCount": 33,
+      "chapterTags": [
+        "马克思主义哲学",
+        "毛泽东思想",
+        "中国特色社会主义",
+        "时事政治"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "politics-2017",
+      "year": 2017,
+      "years": [
+        2017
+      ],
+      "subject": "政治",
+      "subjectKey": "politics",
+      "setName": "2017 政治真题（已解析）",
+      "file": "politics_2017.json",
+      "questionCount": 36,
+      "chapterTags": [
+        "马克思主义哲学",
+        "毛泽东思想",
+        "中国特色社会主义",
+        "时事政治"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "politics-2016",
+      "year": 2016,
+      "years": [
+        2016
+      ],
+      "subject": "政治",
+      "subjectKey": "politics",
+      "setName": "2016 政治真题（已解析）",
+      "file": "politics_2016.json",
+      "questionCount": 37,
+      "chapterTags": [
+        "马克思主义哲学",
+        "毛泽东思想",
+        "中国特色社会主义",
+        "时事政治"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "politics-2016-2023",
+      "year": 2016,
+      "years": [
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "subject": "政治",
+      "subjectKey": "politics",
+      "setName": "2016-2023 政治历年真题合集",
+      "file": "politics_2016_2023.json",
+      "questionCount": 259,
+      "chapterTags": [
+        "马克思主义哲学",
+        "毛泽东思想",
+        "中国特色社会主义",
+        "时事政治"
+      ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    }
+  ]
+}
