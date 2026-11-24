@@ -276,12 +276,44 @@
       "subjectKey": "english",
       "setName": "2025 英语真题",
       "file": "english_2025.json",
-      "questionCount": 0,
+      "questionCount": 21,
       "chapterTags": [
         "语音",
         "情景对话",
         "阅读理解"
       ],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "english-2026",
+      "year": 2026,
+      "years": [
+        2026
+      ],
+      "subject": "英语",
+      "subjectKey": "english",
+      "setName": "2026 英语真题",
+      "file": "english_2026",
+      "questionCount": 0,
+      "chapterTags": [],
+      "status": "ready",
+      "sourceFile": null,
+      "format": "json"
+    },
+    {
+      "id": "politics-2026",
+      "year": 2026,
+      "years": [
+        2026
+      ],
+      "subject": "政治",
+      "subjectKey": "politics",
+      "setName": "2026 政治真题",
+      "file": "politics_2026",
+      "questionCount": 0,
+      "chapterTags": [],
       "status": "ready",
       "sourceFile": null,
       "format": "json"
